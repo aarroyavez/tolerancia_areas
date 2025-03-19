@@ -24,6 +24,9 @@ Si no tienes Python instalado, sigue estos pasos:
    ```bash
    python --version
 
+4. Instala la librería pandas
+
+         pip install pandas
    
 Ejecución del Script
 
