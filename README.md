@@ -205,14 +205,15 @@ def validar_tolerancia_registral(row):
     else:
         return "Fuera de tolerancia"
 
+ 
 # Aplicar las funciones para calcular la diferencia, porcentajes, límites y validar la tolerancia
-df['Diferencia'] = df.apply(calcular_diferencia, axis=1)
-df['Porcentaje Diferencia (Area Geografica)'] = df.apply(calcular_porcentaje_diferencia_geografica, axis=1)
-df['Porcentaje Diferencia (Area Registral)'] = df.apply(calcular_porcentaje_diferencia_registral, axis=1)
-df['Limite Tolerancia (Area Geografica)'] = df.apply(calcular_limite_tolerancia_geografica, axis=1)
-df['Limite Tolerancia (Area Registral)'] = df.apply(calcular_limite_tolerancia_registral, axis=1)
-df['Validador Tolerancia (Area Geografica)'] = df.apply(validar_tolerancia_geografica, axis=1)
-df['Validador Tolerancia (Area Registral)'] = df.apply(validar_tolerancia_registral, axis=1)
+      df['Diferencia'] = df.apply(calcular_diferencia, axis=1)
+      df['Porcentaje Diferencia (Area Geografica)'] = df.apply(calcular_porcentaje_diferencia_geografica, axis=1)
+      df['Porcentaje Diferencia (Area Registral)'] = df.apply(calcular_porcentaje_diferencia_registral, axis=1)
+      df['Limite Tolerancia (Area Geografica)'] = df.apply(calcular_limite_tolerancia_geografica, axis=1)
+      df['Limite Tolerancia (Area Registral)'] = df.apply(calcular_limite_tolerancia_registral, axis=1)
+      df['Validador Tolerancia (Area Geografica)'] = df.apply(validar_tolerancia_geografica, axis=1)
+      df['Validador Tolerancia (Area Registral)'] = df.apply(validar_tolerancia_registral, axis=1)
 
 # Guardar el DataFrame con las nuevas columnas en un nuevo archivo CSV (opcional)
 df.to_csv('datos_predio_con_diferencias_porcentajes_limites_y_validaciones_v6.csv', index=False)
