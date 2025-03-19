@@ -50,9 +50,9 @@ df = pd.read_csv('datos_predio.csv', delimiter=';', encoding='latin1')
 df = df[df['Area Geografica'] > 0]
 
 # Función para calcular la diferencia entre las áreas
-def calcular_diferencia(row):
-    area_geografica = row['Area Geografica']
-    area_registral = row['Area Registral']
+      def calcular_diferencia(row):
+       area_geografica = row['Area Geografica']
+       area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver NaN (o un mensaje)
     if area_registral == 0:
@@ -79,9 +79,9 @@ def calcular_porcentaje_diferencia_geografica(row):
     return round(porcentaje_diferencia, 2)  # Redondear a 2 decimales
 
 # Función para calcular el porcentaje de diferencia usando Área Registral como referencia
-def calcular_porcentaje_diferencia_registral(row):
-    area_geografica = row['Area Geografica']
-    area_registral = row['Area Registral']
+      def calcular_porcentaje_diferencia_registral(row):
+       area_geografica = row['Area Geografica']
+       area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver NaN (o un mensaje)
     if area_registral == 0:
@@ -115,8 +115,8 @@ def calcular_limite_tolerancia_geografica(row):
     return round(limite_tolerancia, 2)  # Redondear a 2 decimales
 
 # Función para calcular el límite de tolerancia usando Área Registral como referencia
-def calcular_limite_tolerancia_registral(row):
-    area_registral = row['Area Registral']
+      def calcular_limite_tolerancia_registral(row):
+       area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver NaN (o un mensaje)
     if area_registral == 0:
@@ -140,9 +140,9 @@ def calcular_limite_tolerancia_registral(row):
     return round(limite_tolerancia, 2)  # Redondear a 2 decimales
 
 # Función para validar la tolerancia usando Área Geográfica como referencia
-def validar_tolerancia_geografica(row):
-    area_geografica = row['Area Geografica']
-    area_registral = row['Area Registral']
+      def validar_tolerancia_geografica(row):
+       area_geografica = row['Area Geografica']
+       area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver un mensaje especial
     if area_registral == 0:
@@ -173,9 +173,9 @@ def validar_tolerancia_geografica(row):
         return "Fuera de tolerancia"
 
 # Función para validar la tolerancia usando Área Registral como referencia
-def validar_tolerancia_registral(row):
-    area_geografica = row['Area Geografica']
-    area_registral = row['Area Registral']
+      def validar_tolerancia_registral(row):
+       area_geografica = row['Area Geografica']
+       area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver un mensaje especial
     if area_registral == 0:
@@ -216,10 +216,10 @@ def validar_tolerancia_registral(row):
       df['Validador Tolerancia (Area Registral)'] = df.apply(validar_tolerancia_registral, axis=1)
 
 # Guardar el DataFrame con las nuevas columnas en un nuevo archivo CSV (opcional)
-df.to_csv('datos_predio_con_diferencias_porcentajes_limites_y_validaciones_v6.csv', index=False)
-
+      df.to_csv('datos_predio_con_diferencias_porcentajes_limites_y_validaciones_v6.csv', index=False)
+   
 # Mostrar el DataFrame resultante
-print(df)
+      print(df)
 
 3. Ejecutar el Script
 Abre una terminal y navega al directorio donde guardaste el script y el archivo datos_predio.csv.
