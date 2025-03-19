@@ -44,10 +44,10 @@ import pandas as pd
 import numpy as np  # Para usar NaN
 
 # Leer el archivo CSV con el delimitador correcto
-df = pd.read_csv('datos_predio.csv', delimiter=';', encoding='latin1')
+      df = pd.read_csv('datos_predio.csv', delimiter=';', encoding='latin1')
 
 # Filtrar los predios donde 'Area Geografica' sea mayor a 0
-df = df[df['Area Geografica'] > 0]
+      df = df[df['Area Geografica'] > 0]
 
 # Función para calcular la diferencia entre las áreas
       def calcular_diferencia(row):
@@ -55,28 +55,28 @@ df = df[df['Area Geografica'] > 0]
        area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver NaN (o un mensaje)
-    if area_registral == 0:
+       if area_registral == 0:
         return np.nan  # O puedes usar "Área Registral inválida"
     
     # Calcular la diferencia absoluta entre las áreas
     diferencia = abs(area_geografica - area_registral)
     
-    return round(diferencia, 2)  # Redondear a 2 decimales
+       return round(diferencia, 2)  # Redondear a 2 decimales
 
 # Función para calcular el porcentaje de diferencia usando Área Geográfica como referencia
-def calcular_porcentaje_diferencia_geografica(row):
-    area_geografica = row['Area Geografica']
-    area_registral = row['Area Registral']
+      def calcular_porcentaje_diferencia_geografica(row):
+       area_geografica = row['Area Geografica']
+       area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver NaN (o un mensaje)
-    if area_registral == 0:
+       if area_registral == 0:
         return np.nan  # O puedes usar "Área Registral inválida"
     
     # Calcular la diferencia absoluta y el porcentaje
-    diferencia = abs(area_geografica - area_registral)
-    porcentaje_diferencia = (diferencia / area_geografica) * 100
+       diferencia = abs(area_geografica - area_registral)
+       porcentaje_diferencia = (diferencia / area_geografica) * 100
     
-    return round(porcentaje_diferencia, 2)  # Redondear a 2 decimales
+       return round(porcentaje_diferencia, 2)  # Redondear a 2 decimales
 
 # Función para calcular el porcentaje de diferencia usando Área Registral como referencia
       def calcular_porcentaje_diferencia_registral(row):
@@ -84,53 +84,53 @@ def calcular_porcentaje_diferencia_geografica(row):
        area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver NaN (o un mensaje)
-    if area_registral == 0:
-        return np.nan  # O puedes usar "Área Registral inválida"
+         if area_registral == 0:
+         return np.nan  # O puedes usar "Área Registral inválida"
     
     # Calcular la diferencia absoluta y el porcentaje
-    diferencia = abs(area_registral - area_geografica)
-    porcentaje_diferencia = (diferencia / area_registral) * 100
+       diferencia = abs(area_registral - area_geografica)
+       porcentaje_diferencia = (diferencia / area_registral) * 100
     
-    return round(porcentaje_diferencia, 2)  # Redondear a 2 decimales
+       return round(porcentaje_diferencia, 2)  # Redondear a 2 decimales
 
 # Función para calcular el límite de tolerancia usando Área Geográfica como referencia
-def calcular_limite_tolerancia_geografica(row):
-    area_geografica = row['Area Geografica']
+      def calcular_limite_tolerancia_geografica(row):
+       area_geografica = row['Area Geografica']
     
     # Determinar el porcentaje de tolerancia según el rango del Área Geográfica
-    if 2000 < area_geografica <= 10000:
+       if 2000 < area_geografica <= 10000:
         tolerancia = 0.09
-    elif 10000 < area_geografica <= 100000:
+       elif 10000 < area_geografica <= 100000:
         tolerancia = 0.07
-    elif 100000 < area_geografica <= 500000:
+       elif 100000 < area_geografica <= 500000:
         tolerancia = 0.04
-    elif area_geografica > 500000:
+       elif area_geografica > 500000:
         tolerancia = 0.02
-    else:
+       else:
         return np.nan  # Para áreas menores o iguales a 2000 m2
     
     # Calcular el límite de tolerancia permitido
-    limite_tolerancia = area_geografica * tolerancia
+       limite_tolerancia = area_geografica * tolerancia
     
-    return round(limite_tolerancia, 2)  # Redondear a 2 decimales
+       return round(limite_tolerancia, 2)  # Redondear a 2 decimales
 
 # Función para calcular el límite de tolerancia usando Área Registral como referencia
       def calcular_limite_tolerancia_registral(row):
        area_registral = row['Area Registral']
     
     # Si el Área Registral es 0, devolver NaN (o un mensaje)
-    if area_registral == 0:
-        return np.nan  # O puedes usar "Área Registral inválida"
+         if area_registral == 0:
+         return np.nan  # O puedes usar "Área Registral inválida"
     
     # Determinar el porcentaje de tolerancia según el rango del Área Registral
-    if 2000 < area_registral <= 10000:
-        tolerancia = 0.09
-    elif 10000 < area_registral <= 100000:
-        tolerancia = 0.07
-    elif 100000 < area_registral <= 500000:
-        tolerancia = 0.04
-    elif area_registral > 500000:
-        tolerancia = 0.02
+       if 2000 < area_registral <= 10000:
+           tolerancia = 0.09
+       elif 10000 < area_registral <= 100000:
+           tolerancia = 0.07
+       elif 100000 < area_registral <= 500000:
+           tolerancia = 0.04
+       elif area_registral > 500000:
+            tolerancia = 0.02
     else:
         return np.nan  # Para áreas menores o iguales a 2000 m2
     
