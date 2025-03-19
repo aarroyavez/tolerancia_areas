@@ -23,9 +23,7 @@ Si no tienes Python instalado, sigue estos pasos:
 3. Verifica la instalación abriendo una terminal (`cmd` o `PowerShell`) y ejecutando:
    ```bash
    python --version
-
-
-
+   
 Ejecución del Script
 1. Preparación del Archivo de Datos
 Asegúrate de tener el archivo datos_predio.csv en el mismo directorio donde se encuentra el script. Este archivo debe contener los datos de los predios con las columnas Area Geografica y Area Registral.
