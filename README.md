@@ -25,7 +25,7 @@ Si no tienes Python instalado, sigue estos pasos:
    python --version
 
    
-##Ejecución del Script
+Ejecución del Script
 
 
 1. Preparación del Archivo de Datos
@@ -43,7 +43,7 @@ Ejecuta el script con el siguiente comando:
       python validacion_tolerancia_areas.py
 
 
-##Resultados
+Resultados
 
 
 1. El script generará un archivo CSV llamado datos_predio_con_diferencias_porcentajes_limites_y_validaciones_v6.csv en el mismo directorio.
