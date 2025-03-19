@@ -24,7 +24,8 @@ Si no tienes Python instalado, sigue estos pasos:
    ```bash
    python --version
    
-Ejecución del Script
+##Ejecución del Script
+
 1. Preparación del Archivo de Datos
 Asegúrate de tener el archivo datos_predio.csv en el mismo directorio donde se encuentra el script. Este archivo debe contener los datos de los predios con las columnas Area Geografica y Area Registral.
 
@@ -39,7 +40,7 @@ Ejecuta el script con el siguiente comando:
 
       python validacion_tolerancia_areas.py
 
-Resultados
+##Resultados
 
 1. El script generará un archivo CSV llamado datos_predio_con_diferencias_porcentajes_limites_y_validaciones_v6.csv en el mismo directorio.
 2. Este archivo contendrá las columnas adicionales con los resultados de los cálculos.
