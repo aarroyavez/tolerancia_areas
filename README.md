@@ -40,7 +40,7 @@ Abre una terminal y navega al directorio donde guardaste el script y el archivo 
 
 Ejecuta el script con el siguiente comando:
 
-      python validacion_tolerancia_areas.py
+      python validacion_tolerancia_areas_v6.py
 
 
 Resultados
